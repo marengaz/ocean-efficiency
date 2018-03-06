@@ -1,3 +1,7 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 from math import pi
 
 import math
@@ -6,25 +10,25 @@ from sqlalchemy import Column, Integer, Sequence, Boolean, String, Float
 
 
 class Leg(object):
-    __tablename__ = 'leg'
-
-    leg_id = Column(Integer, Sequence('leg_id_seq'), primary_key=True)
-    rhumb_mode = Column(Boolean)
-    origin_name = Column(String(100))
-    destination_name = Column(String(100))
-    vector_distance = Column(Float)
-    initial_bearing = Column(Float)
-    final_bearing = Column(Float)
-    incoming_turn_radius = Column(Float)
-    outgoing_turn_radius = Column(Float)
-
-    previous_leg_final_bearing = Column(Float)
-    following_leg_initial_bearing = Column(Float)
-
-    incoming_arc_length = Column(Float)
-    incoming_vector_reduction = Column(Float)
-    outgoing_vector_reduction = Column(Float)
-    leg_distance = Column(Float)
+    # __tablename__ = 'leg'
+    #
+    # leg_id = Column(Integer, Sequence('leg_id_seq'), primary_key=True)
+    # rhumb_mode = Column(Boolean)
+    # origin_name = Column(String(100))
+    # destination_name = Column(String(100))
+    # vector_distance = Column(Float)
+    # initial_bearing = Column(Float)
+    # final_bearing = Column(Float)
+    # incoming_turn_radius = Column(Float)
+    # outgoing_turn_radius = Column(Float)
+    #
+    # previous_leg_final_bearing = Column(Float)
+    # following_leg_initial_bearing = Column(Float)
+    #
+    # incoming_arc_length = Column(Float)
+    # incoming_vector_reduction = Column(Float)
+    # outgoing_vector_reduction = Column(Float)
+    # leg_distance = Column(Float)
 
     def __init__(self, previous_sail_vector, sail_vector, following_sail_vector):
         self.rhumb_mode = sail_vector.rhumb_mode

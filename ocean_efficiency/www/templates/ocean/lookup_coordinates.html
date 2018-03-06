@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<p>Click the button to get your coordinates.</p>
+
+{% from "ocean/_formhelpers.html" import render_field %}
+<form method=post>
+    <dl>
+    {{ render_field(form.latitude) }}
+    {{ render_field(form.longitude) }}
+    </dl>
+    <p id="location_msg"></p><p>
+    <button type="button" id="location_button" onclick="getLocation()">Use Current Location</button>
+    <input type=submit value=Submit>
+</form>
+
+{% if data %}
+    <p>your point (lat, lon) - <strong>({{ data.input_lat }}, {{ data.input_lon }})</strong> is in the following </p>
+
+    <strong>EEZs:</strong>
+    <ul>
+    {% for zone in data.zones %}
+      <li>{{ zone }}</li>
+    {% endfor %}
+    </ul>
+
+    <strong>Countries:</strong>
+    <ul>
+    {% for country in data.countries %}
+      <li>{{ country }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<script>
+var msg = document.getElementById("location_msg");
+var lat = document.getElementById("latitude");
+var lon = document.getElementById("longitude");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(fillPosition);
+    } else {
+        msg.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function fillPosition(position) {
+    lat.value = position.coords.latitude;
+    lon.value = position.coords.longitude;
+}
+</script>
+
+</body>
+</html>

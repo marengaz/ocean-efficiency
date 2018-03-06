@@ -1,13 +1,23 @@
-from flask import Flask, request, redirect, url_for, render_template, flash
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
-from ocean_efficiency.model.Journey import Journey
+from flask import Flask, request, redirect, url_for, render_template, flash
+from geoalchemy2 import WKTElement
+from sqlalchemy import func
+
+from ocean_efficiency.legacy_model.Journey import Journey
+from ocean_efficiency.utils.db import provide_session
+from ocean_efficiency.www.forms import LatLongForm
 from ocean_efficiency.xmlparse.RouteModel import RouteModel
+from ocean_efficiency.model import EEZ12, WorldBorders
 
 UPLOAD_FOLDER = '/Users/ben.marengo/Downloads'
 ALLOWED_EXTENSIONS = {'xml'}
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='ocean_efficiency/www/templates')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024
 
@@ -18,7 +28,34 @@ def allowed_file(filename):
 
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/lookup_coordinates', methods=['GET', 'POST'])
+@provide_session
+def lookup_coordinates(session):
+    form = LatLongForm(request.form)
+    if request.method == 'POST' and form.validate():
+        lon = form.longitude.data
+        lat = form.latitude.data
+
+        # current_point = 'POINT(%s %s)' % (lon, lat)
+        current_point = WKTElement('POINT(%s %s)' % (lon, lat), srid=4326)
+
+        # rows = session.query(EEZ12).order_by(EEZ12.geoname).all()
+        # rows = session.query(func.ST_Within(EEZ12.geom, current_point)).order_by(EEZ12.geoname).all()
+        zones = session.query(EEZ12.geoname).filter(func.ST_Within(current_point, EEZ12.geom)).order_by(EEZ12.geoname).all()
+        countries = session.query(WorldBorders.name).filter(func.ST_Within(current_point, WorldBorders.geom)).order_by(WorldBorders.name).all()
+
+        data = {
+            'input_lat': lat,
+            'input_lon': lon,
+            'zones': [r.geoname for r in zones],
+            'countries': [r.name for r in countries],
+        }
+
+        return render_template('ocean/lookup_coordinates.html', form=form, data=data)
+    return render_template('ocean/lookup_coordinates.html', form=form, data=None)
+
+
+@app.route('/route_upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -39,7 +76,7 @@ def upload_file():
             j = Journey(rm)
             return str(j)
             # return redirect(url_for('uploaded_file', filename=filename))
-    return render_template('upload_file.html')
+    return render_template('ocean/upload_file.html')
 
 
 if __name__ == '__main__':

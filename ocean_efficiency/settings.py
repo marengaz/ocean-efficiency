@@ -1,10 +1,14 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import atexit
 import logging
 import os
 
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
+# from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.pool import NullPool
 
@@ -16,7 +20,7 @@ log = logging.getLogger(__name__)
 # The SqlAlchemy connection string to the metadata database.
 # SqlAlchemy supports many different database engine, more information
 # their website
-SQL_ALCHEMY_CONN = 'sqlite:////Users/benmarengo/code/oceanefficiency/oe.db'
+SQL_ALCHEMY_CONN = 'postgresql://postgres:Password@localhost/ocean_efficiency_geo'
 
 # If SqlAlchemy should pool database connections.
 SQL_ALCHEMY_POOL_ENABLED = True
@@ -46,7 +50,7 @@ def configure_orm(disable_connection_pool=False):
     log.debug("Setting up DB connection pool (PID %s)" % os.getpid())
     global engine
     global Session
-    engine_args = {}
+    engine_args = {'echo': True}
 
     pool_connections = SQL_ALCHEMY_POOL_ENABLED
     if disable_connection_pool or not pool_connections:
@@ -81,7 +85,7 @@ def dispose_orm():
 configure_vars()
 configure_orm()
 
-Base = declarative_base(bind=engine)
+# Base = declarative_base()
 # Base.metadata.create_all(engine)
 
 # Ensure we close DB connections at gunicon worker terminations
