@@ -36,13 +36,19 @@ def lookup_coordinates(session):
         lon = form.longitude.data
         lat = form.latitude.data
 
-        # current_point = 'POINT(%s %s)' % (lon, lat)
         current_point = WKTElement('POINT(%s %s)' % (lon, lat), srid=4326)
 
-        # rows = session.query(EEZ12).order_by(EEZ12.geoname).all()
-        # rows = session.query(func.ST_Within(EEZ12.geom, current_point)).order_by(EEZ12.geoname).all()
-        zones = session.query(EEZ12.geoname).filter(func.ST_Within(current_point, EEZ12.geom)).order_by(EEZ12.geoname).all()
-        countries = session.query(WorldBorders.name).filter(func.ST_Within(current_point, WorldBorders.geom)).order_by(WorldBorders.name).all()
+        zones = session\
+            .query(EEZ12.geoname)\
+            .filter(func.ST_Within(current_point, EEZ12.geom))\
+            .order_by(EEZ12.geoname)\
+            .all()
+
+        countries = session\
+            .query(WorldBorders.name)\
+            .filter(func.ST_Within(current_point, WorldBorders.geom))\
+            .order_by(WorldBorders.name)\
+            .all()
 
         data = {
             'input_lat': lat,

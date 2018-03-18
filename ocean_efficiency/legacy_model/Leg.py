@@ -2,34 +2,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
-from math import pi
 
 import math
-
-from sqlalchemy import Column, Integer, Sequence, Boolean, String, Float
+from ocean_efficiency.legacy_model.TurnArc import TurnArc
 
 
 class Leg(object):
-    # __tablename__ = 'leg'
-    #
-    # leg_id = Column(Integer, Sequence('leg_id_seq'), primary_key=True)
-    # rhumb_mode = Column(Boolean)
-    # origin_name = Column(String(100))
-    # destination_name = Column(String(100))
-    # vector_distance = Column(Float)
-    # initial_bearing = Column(Float)
-    # final_bearing = Column(Float)
-    # incoming_turn_radius = Column(Float)
-    # outgoing_turn_radius = Column(Float)
-    #
-    # previous_leg_final_bearing = Column(Float)
-    # following_leg_initial_bearing = Column(Float)
-    #
-    # incoming_arc_length = Column(Float)
-    # incoming_vector_reduction = Column(Float)
-    # outgoing_vector_reduction = Column(Float)
-    # leg_distance = Column(Float)
-
     def __init__(self, previous_sail_vector, sail_vector, following_sail_vector):
         self.rhumb_mode = sail_vector.rhumb_mode
         self.origin_name = sail_vector.origin_name
@@ -45,7 +23,7 @@ class Leg(object):
         # last leg has no following sv
         self.following_leg_initial_bearing = following_sail_vector.initial_bearing if following_sail_vector else None
 
-        self.incoming_arc_length = self.calc_arc_length(
+        self.incoming_arc = TurnArc(
             self.incoming_turn_radius,
             self.previous_leg_final_bearing,
             self.initial_bearing
@@ -67,25 +45,8 @@ class Leg(object):
             self.vector_distance,
             self.incoming_vector_reduction,
             self.outgoing_vector_reduction,
-            self.incoming_arc_length
+            self.incoming_arc.length
         )
-
-    @staticmethod
-    def calc_arc_length(turn_radius, final_bearing, initial_bearing):
-        """
-        calc the 2d arc length between 2 sail vectors
-        :param turn_radius: (NM)
-        :param final_bearing: final bearing of ending sail vector (degrees)
-        :param initial_bearing: initial bearing of following sail vector (degrees)
-        :return: arc_length (NM)
-        """
-        if final_bearing is None or initial_bearing is None:
-            return 0
-
-        full_turn_circumference = 2 * pi * turn_radius
-        circumference_arc_ratio = abs(initial_bearing - final_bearing) / 360
-
-        return full_turn_circumference * circumference_arc_ratio
 
     @staticmethod
     def calc_vector_reduction(turn_radius, final_bearing, initial_bearing):
