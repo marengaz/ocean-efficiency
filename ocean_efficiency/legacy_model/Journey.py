@@ -23,7 +23,7 @@ class Journey(object):
     def __init__(self, route_model):
         self.name = route_model.name
         # Session.add(self)
-        self.sail_vectors = [SailVector(wp1, wp2) for wp1, wp2 in zip(route_model.waypoints, route_model.waypoints[1:])]
+        self.sail_vectors = [SailVector.from_waypoints(wp1, wp2) for wp1, wp2 in zip(route_model.waypoints, route_model.waypoints[1:])]
 
         legs = []
         for psv, sv, nsv in previous_and_next(self.sail_vectors):

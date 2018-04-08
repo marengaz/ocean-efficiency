@@ -13,6 +13,7 @@ from ocean_efficiency.legacy_model.GeoWKT import Point, CircularString, LineStri
 from pygeodesy.ellipsoidalVincenty import LatLon as GCLatLon
 from pygeodesy.sphericalTrigonometry import LatLon as RhumbLatLon
 
+from ocean_efficiency.legacy_model.SailVector import SailVector
 from ocean_efficiency.utils.db import provide_session
 
 
@@ -41,9 +42,6 @@ class LegTurnArc(object):
         calc the 2d arc length between 2 sail vectors
         :return: arc_length (NM)
         """
-        if self.incoming_bearing is None or self.outgoing_bearing is None:
-            return 0
-
         full_turn_circumference = 2 * pi * self.turn_radius
         circumference_arc_ratio = abs(self.outgoing_bearing - self.incoming_bearing) / 360
 
@@ -201,35 +199,42 @@ class Leg(object):
         self.outgoing_turn_radius = sail_vector.outgoing_turn_radius
 
         # first leg has no previous sv
-        self.incoming_arc = None
-        incoming_vector_reduction = 0
         if previous_sail_vector:
             self.incoming_arc = LegTurnArc(
-                self.incoming_turn_radius,
-                previous_sail_vector.final_bearing,
-                self.initial_bearing
+                turn_radius=self.incoming_turn_radius,
+                incoming_bearing=previous_sail_vector.final_bearing,
+                outgoing_bearing=self.initial_bearing
             )
-            incoming_vector_reduction = self.incoming_arc.vector_reduction
+            previous_leg_straight = LegStraight(
+                sail_vector=previous_sail_vector,
+                incoming_arc=LegTurnArc(0, 0, 0),
+                outgoing_arc=self.incoming_arc
+            )
+        else:
+            self.incoming_arc = LegTurnArc(0, 0, 0)
+            previous_leg_straight = None
 
         # last leg has no following sv
-        outgoing_arc = None
-        outgoing_vector_reduction = 0
         if following_sail_vector:
             self.outgoing_arc = LegTurnArc(
                 self.outgoing_turn_radius,
                 self.final_bearing,
                 following_sail_vector.initial_bearing
             )
-            outgoing_vector_reduction = self.outgoing_arc.vector_reduction
+        else:
+            self.incoming_arc = LegTurnArc(0, 0, 0)
 
-        self.leg_straight = LegStraight(sail_vector, self.incoming_arc, outgoing_arc)
-
-        self.leg_distance = self.calc_leg_distance(
-            self.vector_distance,
-            self.incoming_arc.vector_reduction,
-            self.outgoing_arc.vector_reduction,
-            self.incoming_arc.distance
+        self.leg_straight = LegStraight(
+            sail_vector,
+            self.incoming_arc,
+            self.outgoing_arc
         )
+
+        self.incoming_arc.incoming_point = previous_leg_straight.outgoing_point if previous_leg_straight else sail_vector.origin_latlon
+        self.incoming_arc.outgoing_point = self.leg_straight.incoming_point
+
+        self.outgoing_arc.incoming_point = self.leg_straight.outgoing_point
+        # self.outgoing_arc.outgoing_point = not necessary
 
     @property
     def leg_distance(self):
