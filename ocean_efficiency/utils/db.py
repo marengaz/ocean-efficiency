@@ -53,3 +53,26 @@ def provide_session(func):
                 return func(*args, **kwargs)
 
     return wrapper
+
+
+def initdb():
+    from ocean_efficiency.model import Base
+
+    Base.metadata.create_all(settings.engine)
+
+
+def resetdb():
+    from ocean_efficiency.model import Base
+
+    metadata = Base.metadata
+    metadata.reflect(bind=settings.engine)
+
+    def drop_create_table(name, metadata):
+        metadata.tables[name].drop(settings.engine, checkfirst=True)
+        metadata.tables[name].create(settings.engine)
+
+    tables = ['journey']
+    for t in tables:
+        drop_create_table(t, metadata)
+
+

@@ -79,7 +79,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             xml_str = file.read().strip()
             rm = RouteModel.parse(xml_str)
-            j = Journey(rm)
+            j = Journey.from_route_model(rm)
             return str(j)
             # return redirect(url_for('uploaded_file', filename=filename))
     return render_template('ocean/upload_file.html')

@@ -2,8 +2,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
+
+from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, BigInteger, Float, SmallInteger
+from sqlalchemy import Column, Integer, String, BigInteger, Float, SmallInteger, Sequence, DateTime
 from geoalchemy2 import Geometry
 
 Base = declarative_base()
@@ -44,7 +46,28 @@ class WorldBorders(Base):
     geom = Column(Geometry('MultiPolygon', srid=4326))
 
 
+class Journey(Base):
+    __tablename__ = 'journey'
+    journey_id = Column(Integer, Sequence('journey_id_seq'), primary_key=True)
+    name = Column(String(100))
+    created_on = Column(DateTime(), default=datetime.now)
+    updated_on = Column(DateTime(), default=datetime.now, onupdate=datetime.now)
+    geom = Column(Geometry('CompoundCurve', srid=4326))  # , index=True)
 
+
+
+"""
+create table journey
+(
+	journey_id serial not null primary key ,
+	geom geometry(COMPOUNDCURVE, 4326)
+)
+;
+
+create index journey_geom_idx
+	on journey (geom)
+;
+"""
 
 
 

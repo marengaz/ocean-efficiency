@@ -8,9 +8,10 @@ lon_lat_pattern = regex.compile('(\d+\.?\d*) (\d+\.?\d*)')
 class BaseGeoWKT(object):
     wkt_tag = None
 
-    def __init__(self, obj, wkt_tag=''):
+    def __init__(self, obj, wkt_tag='', srid=0):
         self.obj = obj
         self.wkt_tag = wkt_tag
+        self.srid = srid
 
     @classmethod
     def from_wkt(cls, wkt_str):
@@ -46,7 +47,12 @@ class BaseGeoWKT(object):
     def wkt(self):
         if self.wkt_tag is None:
             raise NotImplementedError('Set wkt_tag in class')
-        return '{0}({1})'.format(self.wkt_tag, self)
+        params = dict(
+            srid='SRID={};'.format(self.srid) if self.srid else '',
+            wkt_tag=self.wkt_tag,
+            data=self
+        )
+        return '{srid}{wkt_tag}({data})'.format(**params)
 
     def __str__(self):
         return ', '.join(v.wkt for v in self.obj)
@@ -109,7 +115,7 @@ class CompoundCurve(BaseGeoWKT):
     cc = CompoundCurve( [cs, ls] )
     cc.wkt = COMPOUNDCURVE( CIRCULARSTRING(0 0, 1 1, 1 0), (1 0, 0 1) )
     """
-    def __init__(self, obj, wkt_tag='CompoundCurve'):
+    def __init__(self, obj, wkt_tag='CompoundCurve', srid=0):
         if type(obj) not in (list, tuple):
             raise ValueError('Only supply list or tuple')
 
@@ -117,7 +123,7 @@ class CompoundCurve(BaseGeoWKT):
             if type(o) not in (CircularString, LineString):
                 raise ValueError('Only supply CircularString or LineString')
 
-        super(CompoundCurve, self).__init__(obj, wkt_tag)
+        super(CompoundCurve, self).__init__(obj, wkt_tag, srid=srid)
 
 
 WKT_TAG_CLASS = {

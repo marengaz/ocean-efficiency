@@ -71,8 +71,8 @@ class LegTurnArc(object):
 
     @property
     def wkt_obj(self):
-        lon_lat_list = [self.incoming_wkt_point, self.middle_wkt_point, self.outgoing_wkt_point]
-        cs = CircularString.from_lon_lat_list(lon_lat_list)
+        point_list = [self.incoming_wkt_point, self.middle_wkt_point, self.outgoing_wkt_point]
+        cs = CircularString(point_list)
         return cs
 
     @property
@@ -82,6 +82,9 @@ class LegTurnArc(object):
         x2 = self.outgoing_wkt_point.x
         y2 = self.outgoing_wkt_point.y
         r = self.turn_radius
+
+        if r == 0 or (x1 == x2 and y1 == y2):
+            return Point([x1, y1])
 
         q = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2))
 
@@ -140,6 +143,10 @@ class LegStraight(object):
 
         return origin_latlon.intermediateTo(destination_latlon, fractional_vector_reduction)
 
+    @property
+    def wkt_obj(self):
+        return self.to_segmented_linestring()
+
     def to_segmented_linestring(self):
         """
         :return: segmented linestring
@@ -149,11 +156,11 @@ class LegStraight(object):
         num_segments = int(self.distance % 0.1)
         segment_length = num_segments / incoming_point.distanceTo(outgoing_point)
         if self.rhumb_mode:
-            points = [[incoming_point.lon, incoming_point.lat]]
+            points = [Point([incoming_point.lon, incoming_point.lat])]
             for i in range(1, num_segments):
                 next_point = incoming_point.destination(segment_length*i, self.sail_vector.initial_bearing)
-                points.append([next_point.lon, next_point.lat])
-            points.append([outgoing_point.lon, outgoing_point.lat])
+                points.append(Point([next_point.lon, next_point.lat]))
+            points.append(Point([outgoing_point.lon, outgoing_point.lat]))
             return LineString(points)
         else:
             # use the db
@@ -162,7 +169,7 @@ class LegStraight(object):
                 [outgoing_point.lon, outgoing_point.lat]
             ]
             linestring = LineString.from_lon_lat_list(lon_lat_list, wkt_tag='LineString')
-            self._segment_great_circle(linestring, segment_length)
+            return self._segment_great_circle(linestring, segment_length)
 
     @provide_session
     def _segment_great_circle(self, linestring, max_segment_length, session=None):
@@ -222,7 +229,7 @@ class Leg(object):
                 following_sail_vector.initial_bearing
             )
         else:
-            self.incoming_arc = LegTurnArc(0, 0, 0)
+            self.outgoing_arc = LegTurnArc(0, 0, 0)
 
         self.leg_straight = LegStraight(
             sail_vector,
@@ -238,7 +245,7 @@ class Leg(object):
 
     @property
     def leg_distance(self):
-        return self.leg_straight.distance + self.incoming_arc.distance
+        return self.incoming_arc.distance + self.leg_straight.distance
 
     def __str__(self):
         msg = """From %(origin_name)s to %(destination_name)s\n"""
