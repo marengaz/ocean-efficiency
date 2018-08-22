@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RouteModelType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Name>B624.1 - GBSOU - NOSVG</Name>
+    <Waypoints>
+        <Name>OCT</Name>
+        <Latitude>0.88821468344205656</Latitude>
+        <Longitude>-0.024434655583067347</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>true</IsArrivalPoint>
+        <Radius>926</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>SWING</Name>
+        <Latitude>0.88812273255390417</Latitude>
+        <Longitude>-0.024462679805627892</Longitude>
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>555.6</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>NW NETLEY</Name>
+        <Latitude>0.88785928750126808</Latitude>
+        <Longitude>-0.024077319413874653</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>926</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>FAWLEY</Name>
+        <Latitude>0.88741036921260863</Latitude>
+        <Longitude>-0.02319581697372057</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>926</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>HOOK</Name>
+        <Latitude>0.88706130523605808</Latitude>
+        <Longitude>-0.022794522567977132</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>1852</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>CALSHOT TURN</Name>
+        <Latitude>0.886781641691163</Latitude>
+        <Longitude>-0.022456750775723167</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>926</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>BRAMBLE TURN</Name>
+        <Latitude>0.88624619645976721</Latitude>
+        <Longitude>-0.023189607994831326</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>926</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>PRINCE CONSORT</Name>
+        <Latitude>0.886217488410158</Latitude>
+        <Longitude>-0.022442110233015143</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>926</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>S RYDE MIDDLE</Name>
+        <Latitude>0.8859890178851465</Latitude>
+        <Longitude>-0.021437231409644261</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>3704</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>N STURBRIDGE</Name>
+        <Latitude>0.8859138701940491</Latitude>
+        <Longitude>-0.019824793534063533</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>FORTS</Name>
+        <Latitude>0.8856382401</Latitude>
+        <Longitude>-0.01903863326</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>3704</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>WARNER</Name>
+        <Latitude>0.88543461835759</Latitude>
+        <Longitude>-0.018500490071139894</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>NEW GROUNDS / PILOT OFF</Name>
+        <Latitude>0.88504237996537061</Latitude>
+        <Longitude>-0.017034761019063524</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>1852</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>NAB EAST</Name>
+        <Latitude>0.88446708124466877</Latitude>
+        <Longitude>-0.016551485319422649</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>&lt;FAOP&gt;</Name>
+        <Latitude>0.88411777953425352</Latitude>
+        <Longitude>-0.015964478089398937</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>true</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>OUTSIDE 4NM</Name>
+        <Latitude>0.88331120185558964</Latitude>
+        <Longitude>-0.014609971217100526</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>OUTSIDE 12NM</Name>
+        <Latitude>0.8819418185433725</Latitude>
+        <Longitude>-0.01034501761095</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>GREENWICH LV</Name>
+        <Latitude>0.87850063455423832</Latitude>
+        <Longitude>0.00034119236553506547</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>BASSURELLE</Name>
+        <Latitude>0.88151198475402825</Latitude>
+        <Longitude>0.017458954124868021</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>INSIDE 12NM</Name>
+        <Latitude>0.88363692310582687</Latitude>
+        <Longitude>0.021384234045790859</Longitude>
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>RIDENS SE</Name>
+        <Latitude>0.88476576285829511</Latitude>
+        <Longitude>0.023473634218558428</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>ZC 2</Name>
+        <Latitude>0.88892624069964721</Latitude>
+        <Longitude>0.025445303989208697</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>SW SANDETTIE</Name>
+        <Latitude>0.8930168800087348</Latitude>
+        <Longitude>0.03047173760329722</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>OUTSIDE 12NM</Name>
+        <Latitude>0.89486855780687236</Latitude>
+        <Longitude>0.033194891723417788</Longitude>
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>FOXTROT 3</Name>
+        <Latitude>0.89681412250394754</Latitude>
+        <Longitude>0.036074861079042772</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>EXIT SCHEME</Name>
+        <Latitude>0.89877631894407106</Latitude>
+        <Longitude>0.033151254726841439</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>AVOID TSS</Name>
+        <Latitude>0.90488416644104053</Latitude>
+        <Longitude>0.038296683631805085</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>BESSEMER GAS</Name>
+        <Latitude>0.9285992288</Latitude>
+        <Longitude>0.04428860243</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>GAS FIELD</Name>
+        <Latitude>0.93055283750409945</Latitude>
+        <Longitude>0.042482864475544023</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>CUTTER G FIELD</Name>
+        <Latitude>0.93741339358153408</Latitude>
+        <Longitude>0.046589524441802109</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>SE HOSPITAL BK</Name>
+        <Latitude>0.94735586842601172</Latitude>
+        <Longitude>0.052356931929854113</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>DOGGER BANK</Name>
+        <Latitude>0.98094139167741323</Latitude>
+        <Longitude>0.064034193606277531</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>INSIDE 12NM</Name>
+        <Latitude>1.0222494617068088</Latitude>
+        <Longitude>0.090357848168808583</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>INSIDE 4NM</Name>
+        <Latitude>1.0257901426416329</Latitude>
+        <Longitude>0.0926960484192994</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>&lt;FJORD ENTRY- 3NM B4 PILOT&gt;</Name>
+        <Latitude>1.0265714247122058</Latitude>
+        <Longitude>0.094688488328464077</Longitude>
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>true</IsArrivalPoint>
+        <Radius>5556</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>&lt;PILOT ON&gt;</Name>
+        <Latitude>1.0271995049977161</Latitude>
+        <Longitude>0.096292102865771</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>1852</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>STEINBAIN</Name>
+        <Latitude>1.0284859655484278</Latitude>
+        <Longitude>0.09678843464846118</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>3704</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>DALHAFULGHUA</Name>
+        <Latitude>1.0293895731846989</Latitude>
+        <Longitude>0.096914887712293729</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>3704</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>GRYTA</Name>
+        <Latitude>1.0309700050431829</Latitude>
+        <Longitude>0.0966159670315989</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>1852</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>&lt;SBB&gt;</Name>
+        <Latitude>1.0299653023900233</Latitude>
+        <Longitude>0.098820846109046331</Longitude>
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>true</IsArrivalPoint>
+        <Radius>1852</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>1NM B4 NARROWS</Name>
+        <Latitude>1.0297537592098649</Latitude>
+        <Longitude>0.099253892277537142</Longitude>
+        <Notes>ESA=10M</Notes>
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>1852</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>TJUVHOLMBAEN</Name>
+        <Latitude>1.0294568165070948</Latitude>
+        <Longitude>0.099767045884429736</Longitude>
+        <Notes>ESA=5M</Notes>
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>555.59999999999991</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>APPROACH</Name>
+        <Latitude>1.0293708105732506</Latitude>
+        <Longitude>0.099907436205585509</Longitude>
+        <Notes>ESA=3M</Notes>
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>false</IsArrivalPoint>
+        <Radius>555.59999999999991</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+    <Waypoints>
+        <Name>&lt;SWING CIRCLE&gt;</Name>
+        <Latitude>1.0293212503226077</Latitude>
+        <Longitude>0.10001204002984535</Longitude>
+        <Notes />
+        <IsParameterPoint>false</IsParameterPoint>
+        <SailMode>1</SailMode>
+        <IsArrivalPoint>true</IsArrivalPoint>
+        <Radius>555.59999999999991</Radius>
+        <TrackLimit>0</TrackLimit>
+        <CourseLimit>0</CourseLimit>
+        <Economy>0</Economy>
+        <MaximalSpeed>0</MaximalSpeed>
+        <ControllerType>SamNacos5</ControllerType>
+    </Waypoints>
+</RouteModelType>
