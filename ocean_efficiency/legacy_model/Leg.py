@@ -60,48 +60,33 @@ class LegTurnArc(object):
         return Point([self.outgoing_point.lon, self.outgoing_point.lat])
 
     @property
-    def middle_wkt_point(self):
-        cor = self.origin_of_rotation
-        angle = radians((self.outgoing_bearing - self.incoming_bearing) / 2)
+    def mid_arc_wkt_point(self):
+        return Point([self.mid_arc_point.lon, self.mid_arc_point.lat])
 
-        x = cor.x + (self.turn_radius * cos(angle))
-        y = cor.y + (self.turn_radius * sin(angle))
+    @property
+    def mid_arc_point(self):
+        # calculate by pretending to sail from incoming point to turn origin,
+        # then turn origin to the middle of the turning arc
+        if self.turn_angle > 0:
+            # clockwise turn
+            bearing_incoming_to_turn_origin = (self.incoming_bearing + 90) % 360
+        else:
+            bearing_incoming_to_turn_origin = (self.incoming_bearing + 270) % 360
+        bearing_origin_to_mid_arc = (bearing_incoming_to_turn_origin + 180 + (self.turn_angle/2)) % 360
+        turn_radius_m = self.turn_radius * 1852
 
-        return Point([x, y])
+        turn_origin = self.incoming_point.destination(turn_radius_m, bearing_incoming_to_turn_origin)
+        return turn_origin.destination(turn_radius_m, bearing_origin_to_mid_arc)
+
+    @property
+    def turn_angle(self):
+        return ((((self.outgoing_bearing - self.incoming_bearing) % 360) + 540) % 360) - 180
 
     @property
     def wkt_obj(self):
-        point_list = [self.incoming_wkt_point, self.middle_wkt_point, self.outgoing_wkt_point]
+        point_list = [self.incoming_wkt_point, self.mid_arc_wkt_point, self.outgoing_wkt_point]
         cs = CircularString(point_list)
         return cs
-
-    @property
-    def origin_of_rotation(self):
-        x1 = self.incoming_wkt_point.x
-        y1 = self.incoming_wkt_point.y
-        x2 = self.outgoing_wkt_point.x
-        y2 = self.outgoing_wkt_point.y
-        r = self.turn_radius
-
-        if r == 0 or (x1 == x2 and y1 == y2):
-            return Point([x1, y1])
-
-        q = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2))
-
-        y3 = (y1 + y2) / 2
-
-        x3 = (x1 + x2) / 2
-
-        basex = sqrt(pow(r, 2) - pow((q / 2), 2)) * (y1 - y2) / q  # calculate once
-        basey = sqrt(pow(r, 2) - pow((q / 2), 2)) * (x2 - x1) / q  # calculate once
-
-        centerx1 = x3 + basex  # center x of circle 1
-        centery1 = y3 + basey  # center y of circle 1
-        # centerx2 = x3 - basex  # center x of circle 2
-        # centery2 = y3 - basey  # center y of circle 2
-
-        return Point([centerx1, centery1])
-        # return Point([centerx2, centery2])
 
     @property
     def vector_reduction(self):
